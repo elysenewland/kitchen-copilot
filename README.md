@@ -1,5 +1,5 @@
 # Kitchen Copilot
-## Video Demo:  <URL HERE>
+## Video Demo:  <https://youtu.be/Ox8Pw0P_aQA>
 ## Description:
 
 Kitchen Copilot is a recipe website that allows users to check off ingredients they already have in their pantry or fridge and returns a list of recipes based on those checked ingredients. The choice to create a recipe website came from my personal experience as an avid home chef and baker. I like to challenge myself to make meals/baked goods with only the ingredients I have on hand.
