@@ -6,15 +6,35 @@
     // Create checkbox array of ingredients for user
     let ingredients = [
       { value: "flour", name: "Flour" },
+      { value: "oats", name: "Oats" },
+      { value: "cornmeal", name: "Cornmeal" },
       { value: "sugar", name: "Sugar" },
       { value: "brown_sugar", name: "Brown Sugar" },
-      { value: "salt", name: "Salt" },
+      { value: "honey", name: "Honey" },
       { value: "baking_powder", name: "Baking Powder" },
       { value: "baking_soda", name: "Baking Soda" },
+      { value: "cornstarch", name: "Cornstarch" },
+      { value: "cocoa", name: "Cocoa" },
       { value: "yeast", name: "Yeast" },
-      { value: "cinnamon", name: "Cinnamon" },
       { value: "milk", name: "Milk" },
-      { value: "oats", name: "Oats" },
+      { value: "butter", name: "Butter" },
+      { value: "eggs", name: "Eggs" },
+      { value: "cheese", name: "Cheese" },
+      { value: "cinnamon", name: "Cinnamon" },
+      { value: "cloves", name: "Cloves" },
+      { value: "nutmeg", name: "Nutmeg" },
+      { value: "banana", name: "Bananas" },
+      { value: "apples", name: "Apples" },
+      { value: "pineapple", name: "Pineapple" },
+      { value: "coconut", name: "Coconut" },
+      { value: "strawberries", name: "Strawberries" },
+      { value: "blueberries", name: "Blueberries" },
+      { value: "lemon", name: "Lemon" },
+      { value: "walnuts", name: "Walnuts" },
+      { value: "pecans", name: "Pecans" },
+      { value: "cashews", name: "Cashews" },
+      { value: "peanuts", name: "Peanuts" },
+      { value: "chocolate_chips", name: "Chocolate Chips" },
     ];
 
     // Create recipe array to store recipes in
@@ -25,7 +45,7 @@
     async function fetchRecipes() {
         if (userIngredients.length === 0) {
             console.log("Error");
-            alert("Hold up, please select at least one ingredient");
+            alert("Please select at least one ingredient");
         } else { 
             isLoading = true;
             const response = await fetch(`https://api.spoonacular.com/recipes/findByIngredients?ingredients=${userIngredients.join(',')}&apiKey=d9b9b7cd4a264da1bbf4e83c3302b689`)
@@ -37,21 +57,27 @@
 
 </script>
 
-  <!-- Prompt user to click check boxes of ingredients -->
-<h2>What ingredients do you have?</h2>
-<div id="ingredients">
-    {#each ingredients as checkbox}
-        <label>
-            <input type="checkbox" name="options" value={checkbox.value} bind:group={userIngredients}>
-            {checkbox.name}
-        </label>
-      <br>
-    {/each}
+<div class="hero">
+    <h2>Discover Delicious Recipes with Ingredients Already in Your Kitchen</h2>
 </div>
 
-<!-- Button to find recipes based on clicked check boxes -->
-<button on:click={fetchRecipes}>Find Recipes</button>
+<!-- Prompt user to click check boxes of ingredients -->
+<div class="ingredients">
+    <h2>What ingredients do you have?</h2>
+    <ul class="ingredient-list">
+        {#each ingredients as checkbox}
+        <li>
+            <label>
+                <input class="checkbox" type="checkbox" name="options" value={checkbox.value} bind:group={userIngredients}>
+                {checkbox.name}
+            </label>
+        </li>
+        {/each}
+    </ul>
 
+    <!-- Button to find recipes based on clicked check boxes -->
+    <button on:click={fetchRecipes}>Find Recipes</button>
+</div>
 <!-- If page is loading, return loading state -->
 {#if isLoading}
     <p>Loading…</p>

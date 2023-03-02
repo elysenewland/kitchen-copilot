@@ -3,7 +3,7 @@
 ## Description:
 
 Kitchen Copilot is a recipe website that allows users to check off ingredients they already have in their pantry or fridge and returns a list of recipes based on those checked ingredients. The choice to create a recipe website came from my personal experience as an avid home chef and baker. I like to challenge myself to make meals/baked goods with only the ingredients I have on hand.
-I utilized Svelte, a Javascript-based framework, due to its increasing popularity amongst web developers and to challenge myself with something new. 
+I utilized Svelte, a Javascript framework, due to its increasing popularity amongst web developers and to challenge myself with something new. 
 
 ### Files
 #### /routes/layout.svelte
@@ -22,4 +22,6 @@ I found when testing my site that the API had duplicate ingredients listed. To f
 
 ### Design Choices
 I used an established API to fetch data rather than create hardcoded JSON recipe files. This took significantly less time and taught me how to get and display data from an API, which I've never worked with before. 
-I decided to display the recipe title, image, time to make, ingredient names/amounts, and instructions based on what I've seen on other popular recipe websites. 
+I decided to display the recipe title, image, time to make, ingredient names/amounts, and instructions based on what I've seen on other popular recipe websites. I worked with another person to help me with the design of the page and learned how to obtain dimensions (padding, margin, colors, etc.) in Figma files.  
+Instead of creating separate components, the global.css file holds all of the app’s styling because it’s relatively small. I created color variables based on a design scheme that my husband (who is a developer and UI designer) helped me with.To ensure the app was responsive I coded media queries at three different breakpoints. CSS Grid was used to style the checkbox lists. 
+
